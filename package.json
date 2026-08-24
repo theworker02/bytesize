@@ -1,7 +1,7 @@
 {
   "name": "bytesize",
   "version": "1.0.0",
-  "description": "Parse 1.5KiB/2MB sizes and format bytes as IEC units.",
+  "description": "Parse human sizes (1.5KiB, 2MB) into bytes, or format an integer byte count as IEC units.",
   "bin": {
     "bytesize": "./src/cli.js"
   },
@@ -12,5 +12,26 @@
   "license": "MIT",
   "engines": {
     "node": ">=18"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/theworker02/bytesize.git"
+  },
+  "homepage": "https://theworker02.github.io/bytesize/",
+  "bugs": {
+    "url": "https://github.com/theworker02/bytesize/issues"
+  },
+  "files": [
+    "src",
+    "docs",
+    "LICENSE",
+    "README.md"
+  ],
+  "keywords": [
+    "bytes",
+    "iec",
+    "kib",
+    "filesize",
+    "cli"
+  ]
 }
