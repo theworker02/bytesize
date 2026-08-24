@@ -30,29 +30,67 @@
   <div class="wrap">
     <section>
       <h2>Synopsis</h2>
-      <pre><code>bytesize [options] &lt;size-or-bytes&gt;</code></pre>
-      <div class="callout sans"><strong>Tip:</strong> <code>bytesize --help</code> prints this text in the terminal. <code>bytesize --version</code> prints <code>1.0.0</code>.</div>
+      <pre><code>bytesize 1.00 (1.0.0)
+
+Usage:
+  bytesize parse &lt;size&gt; [options]
+  bytesize format &lt;bytes&gt; [options]
+  bytesize convert &lt;size-or-bytes&gt; --to &lt;unit&gt; [options]
+  bytesize &lt;1.5KiB|2MB|1536&gt;
+
+Parse human sizes into bytes, or format an integer byte count.
+
+IEC (base 1024): KiB MiB GiB TiB PiB
+SI  (base 1000): KB MB GB TB PB
+
+Subcommands:
+  parse              Convert a size string to a byte count
+  format             Format a byte count using --iec (default) or --si
+  convert            Convert a size into another unit via --to
+
+If the first argument is all digits, format it. Otherwise parse it.
+That shorthand still works without a subcommand.
+
+Options:
+  -h, --help         Show this help and exit 0
+  -V, -v, --version  Print 1.0.0 and exit 0
+  --json             {"bytes","text",...}
+  --si               SI units for format (KB, MB, ...)
+  --iec              IEC units for format (default)
+  --to &lt;unit&gt;        Target unit for convert (KiB, MB, B, ...)
+
+Exit codes:
+  0  parsed or formatted successfully
+  1  invalid size, invalid unit, or missing argument
+
+Examples:
+  bytesize 1.5KiB
+  bytesize 1536
+  bytesize parse 2MB --json
+  bytesize format 2000000 --si
+  bytesize convert 1.5KiB --to B</code></pre>
+      <div class="callout sans"><strong>Tip:</strong> <code>bytesize --help</code> and <code>-h</code> print this text. <code>bytesize --version</code> and <code>-V</code> print <code>1.0.0</code>.</div>
     </section>
     <section>
       <h2>Flags and arguments</h2>
-      <table class="sans"><thead><tr><th>Flag / argument</th><th>Meaning</th></tr></thead><tbody><tr><td><code>-h, --help</code></td><td>Print detailed usage and exit 0.</td></tr><tr><td><code>-v, --version</code></td><td>Print 1.0.0 and exit 0.</td></tr><tr><td><code>&lt;digits&gt;</code></td><td>Integer bytes → IEC string (KiB, MiB, ...).</td></tr><tr><td><code>&lt;n&gt;&lt;unit&gt;</code></td><td>Parse to integer bytes. IEC units end in iB. SI units are KB/MB/GB (base 1000).</td></tr></tbody></table>
+      <p>The complete flag list is in <code>bytesize --help</code> (shown above). Human output is the default; pass <code>--json</code> where supported.</p>
     </section>
     <section>
       <h2>Exit codes</h2>
-      <table class="sans"><thead><tr><th>Code</th><th>Meaning</th></tr></thead><tbody><tr><td><code>0</code></td><td>Parsed or formatted.</td></tr><tr><td><code>1</code></td><td>Missing argument or invalid size string.</td></tr></tbody></table>
+      <table class="sans"><thead><tr><th>Code</th><th>Meaning</th></tr></thead><tbody><tr><td><code>0</code></td><td>Parsed or formatted successfully.</td></tr><tr><td><code>1</code></td><td>Invalid size, invalid unit, or missing argument.</td></tr></tbody></table>
     </section>
     <section>
       <h2>Configuration</h2>
-      <p>No configuration. Parse units: B, KB/MB/GB/TB/PB (SI), KiB/MiB/GiB/TiB/PiB (IEC). Format always uses IEC.</p>
+      <p>IEC is base 1024 (KiB). SI is base 1000 (KB). Use `--to` with convert.</p>
     </section>
     <section id="examples">
       <h2>Worked examples</h2>
       <h3 class="ok">Success path</h3>
-      <pre><code>bytesize 2MB
-bytesize 1048576</code></pre><pre><code>2000000
-1MiB</code></pre>
+      <p>Parse a human size and format bytes.</p><pre><code>bytesize 1.5KiB
+bytesize format 2000000 --si</code></pre><pre><code>1536
+2MB</code></pre>
       <h3 class="fail">Failure path</h3>
-      <pre><code>bytesize potato</code></pre><pre><code>invalid size: potato</code></pre><p>Exit code is 1.</p>
+      <p>Invalid sizes exit 1.</p><pre><code>bytesize nope</code></pre><pre><code>invalid size: nope</code></pre><p>Exit code is 1.</p>
     </section>
   </div>
   <footer class="sans">

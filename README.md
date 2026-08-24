@@ -59,24 +59,55 @@ Prints `1536` then `1.50KiB`.
 
 ## CLI reference
 
-Synopsis:
-
 ```text
-bytesize [options] <size-or-bytes>
-```
+bytesize 1.00 (1.0.0)
 
-| Flag / argument | Meaning |
-| --- | --- |
-| `-h, --help` | Print detailed usage and exit 0. |
-| `-v, --version` | Print 1.0.0 and exit 0. |
-| `<digits>` | Integer bytes → IEC string (KiB, MiB, ...). |
-| `<n><unit>` | Parse to integer bytes. IEC units end in iB. SI units are KB/MB/GB (base 1000). |
+Usage:
+  bytesize parse <size> [options]
+  bytesize format <bytes> [options]
+  bytesize convert <size-or-bytes> --to <unit> [options]
+  bytesize <1.5KiB|2MB|1536>
+
+Parse human sizes into bytes, or format an integer byte count.
+
+IEC (base 1024): KiB MiB GiB TiB PiB
+SI  (base 1000): KB MB GB TB PB
+
+Subcommands:
+  parse              Convert a size string to a byte count
+  format             Format a byte count using --iec (default) or --si
+  convert            Convert a size into another unit via --to
+
+If the first argument is all digits, format it. Otherwise parse it.
+That shorthand still works without a subcommand.
+
+Options:
+  -h, --help         Show this help and exit 0
+  -V, -v, --version  Print 1.0.0 and exit 0
+  --json             {"bytes","text",...}
+  --si               SI units for format (KB, MB, ...)
+  --iec              IEC units for format (default)
+  --to <unit>        Target unit for convert (KiB, MB, B, ...)
+
+Exit codes:
+  0  parsed or formatted successfully
+  1  invalid size, invalid unit, or missing argument
+
+Examples:
+  bytesize 1.5KiB
+  bytesize 1536
+  bytesize parse 2MB --json
+  bytesize format 2000000 --si
+  bytesize convert 1.5KiB --to B
+```
 
 Print the same text locally:
 
 ```bash
 bytesize --help
+bytesize -h
 bytesize --version
+bytesize -V
 ```
 
 Expected version output:
@@ -87,37 +118,41 @@ Expected version output:
 
 ## Configuration
 
-No configuration. Parse units: B, KB/MB/GB/TB/PB (SI), KiB/MiB/GiB/TiB/PiB (IEC). Format always uses IEC.
+IEC is base 1024 (KiB). SI is base 1000 (KB). Use `--to` with convert.
 
 ## Exit codes
 
 | Code | Meaning |
 | --- | --- |
-| `0` | Parsed or formatted. |
-| `1` | Missing argument or invalid size string. |
+| `0` | Parsed or formatted successfully. |
+| `1` | Invalid size, invalid unit, or missing argument. |
 
 ## Examples
 
 ### Success path
 
+Parse a human size and format bytes.
+
 ```bash
-bytesize 2MB
-bytesize 1048576
+bytesize 1.5KiB
+bytesize format 2000000 --si
 ```
 
 ```text
-2000000
-1MiB
+1536
+2MB
 ```
 
 ### Failure path
 
+Invalid sizes exit 1.
+
 ```bash
-bytesize potato
+bytesize nope
 ```
 
 ```text
-invalid size: potato
+invalid size: nope
 ```
 
 Exit code is 1.

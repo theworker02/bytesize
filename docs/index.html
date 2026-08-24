@@ -42,9 +42,45 @@
     <section id="install">
       <h2>Install</h2>
       <p>Install globally from Git, or run with Node from a clone. There are no extra dependencies.</p>
-      <pre><code>npm install -g git+https://github.com/theworker02/bytesize.git
-bytesize --help
-node src/cli.js --help</code></pre>
+      <pre><code>bytesize 1.00 (1.0.0)
+
+Usage:
+  bytesize parse &lt;size&gt; [options]
+  bytesize format &lt;bytes&gt; [options]
+  bytesize convert &lt;size-or-bytes&gt; --to &lt;unit&gt; [options]
+  bytesize &lt;1.5KiB|2MB|1536&gt;
+
+Parse human sizes into bytes, or format an integer byte count.
+
+IEC (base 1024): KiB MiB GiB TiB PiB
+SI  (base 1000): KB MB GB TB PB
+
+Subcommands:
+  parse              Convert a size string to a byte count
+  format             Format a byte count using --iec (default) or --si
+  convert            Convert a size into another unit via --to
+
+If the first argument is all digits, format it. Otherwise parse it.
+That shorthand still works without a subcommand.
+
+Options:
+  -h, --help         Show this help and exit 0
+  -V, -v, --version  Print 1.0.0 and exit 0
+  --json             {"bytes","text",...}
+  --si               SI units for format (KB, MB, ...)
+  --iec              IEC units for format (default)
+  --to &lt;unit&gt;        Target unit for convert (KiB, MB, B, ...)
+
+Exit codes:
+  0  parsed or formatted successfully
+  1  invalid size, invalid unit, or missing argument
+
+Examples:
+  bytesize 1.5KiB
+  bytesize 1536
+  bytesize parse 2MB --json
+  bytesize format 2000000 --si
+  bytesize convert 1.5KiB --to B</code></pre>
     </section>
     <section id="usage">
       <h2>Usage</h2>
@@ -77,13 +113,13 @@ Examples:
       <div class="grid-2">
         <div>
           <h3 class="ok">Success</h3>
-          <pre><code>bytesize 2MB
-bytesize 1048576</code></pre><pre><code>2000000
-1MiB</code></pre>
+          <p>Parse a human size and format bytes.</p><pre><code>bytesize 1.5KiB
+bytesize format 2000000 --si</code></pre><pre><code>1536
+2MB</code></pre>
         </div>
         <div>
           <h3 class="fail">Failure</h3>
-          <pre><code>bytesize potato</code></pre><pre><code>invalid size: potato</code></pre><p>Exit code is 1.</p>
+          <p>Invalid sizes exit 1.</p><pre><code>bytesize nope</code></pre><pre><code>invalid size: nope</code></pre><p>Exit code is 1.</p>
         </div>
       </div>
     </section>
