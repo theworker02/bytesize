@@ -1,6 +1,6 @@
 # bytesize
 
-<img src="docs/logo.svg" alt="bytesize mark" width="88" height="88">
+<img src="docs/logo.svg" alt="bytesize mark" width="96" height="96">
 
 **Parse human sizes (1.5KiB, 2MB) into bytes, or format an integer byte count as IEC units.**
 
@@ -11,6 +11,8 @@
 ![release 1.00](https://img.shields.io/github/v/release/theworker02/bytesize?display_name=release)
 
 Package version **1.00** (`1.0.0`). Default branch is **`main`** — never `master`.
+
+**Docs:** [GitHub Pages](https://theworker02.github.io/bytesize/) · **Source:** [`theworker02/bytesize`](https://github.com/theworker02/bytesize) · **Release 1.00:** [`v1.0.0`](https://github.com/theworker02/bytesize/releases/tag/v1.0.0)
 
 ## Why it exists
 
