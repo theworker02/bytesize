@@ -1,3 +1,5 @@
+/* @ts-self-types="./mod.d.ts" */
+
 const IEC = ["B", "KiB", "MiB", "GiB", "TiB", "PiB"];
 const SI = ["B", "KB", "MB", "GB", "TB", "PB"];
 
