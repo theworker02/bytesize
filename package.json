@@ -1,40 +1,16 @@
 {
-  "name": "@magnexis/bytesize",
-  "version": "1.0.0",
-  "description": "Parse human sizes (1.5KiB, 2MB) into bytes, or format an integer byte count as IEC units.",
-  "bin": {
-    "bytesize": "src/cli.js"
-  },
+  "name": "@theworker02/bytesize",
+  "version": "1.2.0",
+  "private": true,
+  "description": "Parse, format, inspect, and convert SI and IEC byte sizes.",
+  "bin": { "bytesize": "src/cli.js" },
   "main": "./src/index.js",
-  "scripts": {
-    "test": "node --test"
-  },
+  "scripts": { "test": "node --test" },
   "license": "MIT",
-  "engines": {
-    "node": ">=18"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/theworker02/bytesize.git"
-  },
+  "engines": { "node": ">=18" },
+  "repository": { "type": "git", "url": "https://github.com/theworker02/bytesize.git" },
   "homepage": "https://theworker02.github.io/bytesize/",
-  "bugs": {
-    "url": "https://github.com/theworker02/bytesize/issues"
-  },
-  "files": [
-    "src",
-    "docs",
-    "LICENSE",
-    "README.md"
-  ],
-  "keywords": [
-    "bytes",
-    "iec",
-    "kib",
-    "filesize",
-    "cli"
-  ],
-  "publishConfig": {
-    "access": "public"
-  }
+  "bugs": { "url": "https://github.com/theworker02/bytesize/issues" },
+  "files": ["src", "docs", "LICENSE", "README.md"],
+  "keywords": ["bytes", "iec", "si", "filesize", "conversion", "jsr"]
 }
