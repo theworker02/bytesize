@@ -3,137 +3,30 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>bytesize  · 1.00</title>
+  <title>bytesize · 1.2.0</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <nav class="nav sans">
     <a class="brand-lockup" href="index.html"><img src="logo.svg" alt=""> bytesize</a>
-    <div class="links">
-      <a href="index.html#overview">Overview</a>
-      <a href="index.html#install">Install</a>
-      <a href="usage.html">Usage</a>
-      <a href="index.html#examples">Examples</a>
-      <a href="https://github.com/theworker02/bytesize">GitHub</a>
-      <a href="https://www.npmjs.com/package/%40magnexis/bytesize">npm</a>
-      <a href="https://github.com/theworker02/bytesize/releases/tag/v1.0.0">1.00</a>
-    </div>
+    <div class="links"><a href="#overview">Overview</a><a href="#api">API</a><a href="#examples">Examples</a><a href="https://jsr.io/@theworker02/bytesize">JSR</a><a href="https://github.com/theworker02/bytesize">GitHub</a></div>
   </nav>
-  
   <header class="hero">
     <img src="logo.svg" alt="bytesize mark">
-    <div>
-      <p class="kicker sans">theworker02 · version 1.00</p>
-      <h1>bytesize</h1>
-      <p class="lede">Parse human sizes (1.5KiB, 2MB) into bytes, or format an integer byte count as IEC units.</p>
-      <div class="badges sans">
-        <span class="badge">1.00 / 1.0.0</span>
-        <span class="badge">branch main</span>
-        <span class="badge">MIT</span>
-        <span class="badge">Node.js >= 18</span>
-      </div>
-    </div>
+    <div><p class="kicker sans">@theworker02/bytesize · JSR · 1.2.0</p><h1>bytesize</h1><p class="lede">A small runtime-neutral toolkit for SI and IEC byte sizes.</p><div class="badges sans"><span class="badge">1.2.0</span><span class="badge">JSR</span><span class="badge">MIT</span><span class="badge">Universal API</span></div></div>
   </header>
   <div class="wrap">
-    <section id="overview">
-      <h2>Overview</h2>
-      <p>Scripts mix SI (MB = 1000^2) and IEC (MiB = 1024^2). bytesize makes the conversion explicit and reversible enough for CLI work.</p>
-      <p>Authors of upload limits, artifact checks, and docs that need a single source of truth for size strings.</p>
-    </section>
-    <section id="install">
-      <h2>Install</h2>
-      <p>Install globally from npm, or run with Node from a clone. There are no extra dependencies.</p>
-      <p>Package: <a href="https://www.npmjs.com/package/%40magnexis/bytesize"><code>@magnexis/bytesize</code></a></p>
-      <pre><code>npm i -g @magnexis/bytesize
-bytesize --help</code></pre>
-      <pre><code>bytesize 1.00 (1.0.0)
+    <section id="overview"><h2>Overview</h2><p>bytesize handles parsing, formatting, conversion, validation, and unit introspection without platform-specific APIs. Version 1.2.0 adds structured unit metadata and richer generated symbol docs.</p></section>
+    <section id="api"><h2>Structured API</h2><p>Canonical package: <a href="https://jsr.io/@theworker02/bytesize"><code>@theworker02/bytesize</code></a></p><pre><code>import { parseSize, formatIec, convert, describeUnit } from "@theworker02/bytesize";
 
-Usage:
-  bytesize parse &lt;size&gt; [options]
-  bytesize format &lt;bytes&gt; [options]
-  bytesize convert &lt;size-or-bytes&gt; --to &lt;unit&gt; [options]
-  bytesize &lt;1.5KiB|2MB|1536&gt;
-
-Parse human sizes into bytes, or format an integer byte count.
-
-IEC (base 1024): KiB MiB GiB TiB PiB
-SI  (base 1000): KB MB GB TB PB
-
-Subcommands:
-  parse              Convert a size string to a byte count
-  format             Format a byte count using --iec (default) or --si
-  convert            Convert a size into another unit via --to
-
-If the first argument is all digits, format it. Otherwise parse it.
-That shorthand still works without a subcommand.
-
-Options:
-  -h, --help         Show this help and exit 0
-  -V, -v, --version  Print 1.0.0 and exit 0
-  --json             {"bytes","text",...}
-  --si               SI units for format (KB, MB, ...)
-  --iec              IEC units for format (default)
-  --to &lt;unit&gt;        Target unit for convert (KiB, MB, B, ...)
-
-Exit codes:
-  0  parsed or formatted successfully
-  1  invalid size, invalid unit, or missing argument
-
-Examples:
-  bytesize 1.5KiB
-  bytesize 1536
-  bytesize parse 2MB --json
-  bytesize format 2000000 --si
-  bytesize convert 1.5KiB --to B</code></pre>
-    </section>
-    <section id="usage">
-      <h2>Usage</h2>
-      <p>Synopsis: <code>bytesize [options] &lt;size-or-bytes&gt;</code></p>
-      <p>See the <a href="usage.html">full CLI reference</a> for every flag, exit code, and example.</p>
-      <pre><code>bytesize 1.00 (1.0.0)
-
-Usage:
-  bytesize &lt;1.5KiB|2MB|1536&gt;
-  bytesize --help
-  bytesize --version
-
-If the argument is all digits, format as IEC.
-Otherwise parse a size string to bytes.
-
-IEC (base 1024): KiB MiB GiB TiB PiB
-SI  (base 1000): KB MB GB TB PB
-
-Options:
-  -h, --help       Show this help
-  -v, --version    Print 1.0.0
-
-Examples:
-  bytesize 1.5KiB
-  bytesize 2MB
-  bytesize 1536</code></pre>
-    </section>
-    <section id="examples">
-      <h2>Examples</h2>
-      <div class="grid-2">
-        <div>
-          <h3 class="ok">Success</h3>
-          <p>Parse a human size and format bytes.</p><pre><code>bytesize 1.5KiB
-bytesize format 2000000 --si</code></pre><pre><code>1536
-2MB</code></pre>
-        </div>
-        <div>
-          <h3 class="fail">Failure</h3>
-          <p>Invalid sizes exit 1.</p><pre><code>bytesize nope</code></pre><pre><code>invalid size: nope</code></pre><p>Exit code is 1.</p>
-        </div>
-      </div>
-    </section>
+console.log(parseSize("1.5KiB"));
+console.log(formatIec(1536));
+console.log(convert("2MB", "MiB"));
+console.log(describeUnit("GiB"));</code></pre></section>
+    <section id="examples"><h2>CLI from source</h2><pre><code>git clone https://github.com/theworker02/bytesize.git
+cd bytesize
+node src/cli.js 1.5KiB</code></pre></section>
   </div>
-  <footer class="sans">
-    MIT © 2026 theworker02 · version <strong>1.00</strong> (<code>1.0.0</code>) ·
-    navy <code>#0B1F33</code> · gold <code>#C9A227</code> ·
-    <a href="https://www.npmjs.com/package/%40magnexis/bytesize">npm</a> ·
-    <a href="https://github.com/theworker02/bytesize">GitHub</a> ·
-    <a href="https://thanks.dev/u/gh/theworker02">thanks.dev</a>
-  </footer>
+  <footer class="sans">MIT © 2026 theworker02 · <strong>1.2.0</strong> · <a href="https://jsr.io/@theworker02/bytesize">JSR</a> · <a href="https://github.com/theworker02/bytesize">GitHub</a></footer>
 </body>
 </html>
