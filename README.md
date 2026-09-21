@@ -1,4 +1,4 @@
-# bytesize
+﻿# bytesize
 
 <img src="docs/logo.svg" alt="bytesize mark" width="96" height="96">
 
@@ -6,9 +6,9 @@
 
 [![JSR](https://jsr.io/badges/@theworker02/bytesize)](https://jsr.io/@theworker02/bytesize)
 ![version 1.2.0](https://img.shields.io/badge/version-1.2.0-C9A227?labelColor=0B1F33)
-![license MIT](https://img.shields.io/badge/license-MIT-0B1F33)
+![license MIT](https://img.shields.io/badge/license-Proprietary%20(source--available)-0B1F33)
 
-**Package:** [`@theworker02/bytesize`](https://jsr.io/@theworker02/bytesize) · **Docs:** [GitHub Pages](https://theworker02.github.io/bytesize/) · **Source:** [`theworker02/bytesize`](https://github.com/theworker02/bytesize)
+**Package:** [`@theworker02/bytesize`](https://jsr.io/@theworker02/bytesize) Â· **Docs:** [GitHub Pages](https://theworker02.github.io/bytesize/) Â· **Source:** [`theworker02/bytesize`](https://github.com/theworker02/bytesize)
 
 ## Highlights
 
@@ -47,17 +47,17 @@ console.log(isSize("42KB"), PACKAGE.version);
 
 ### Parsing and formatting
 
-- `parseSize(input)` — parse SI or IEC text into bytes.
-- `formatIec(bytes)` — format bytes using binary units.
-- `formatSi(bytes)` — format bytes using decimal units.
-- `convert(input, unit)` — convert a value to a target unit.
+- `parseSize(input)` â€” parse SI or IEC text into bytes.
+- `formatIec(bytes)` â€” format bytes using binary units.
+- `formatSi(bytes)` â€” format bytes using decimal units.
+- `convert(input, unit)` â€” convert a value to a target unit.
 
 ### Introspection
 
-- `isSize(value)` — validate a human-readable size string.
-- `describeUnit(unit)` — return the unit system, base, and exponent.
-- `IEC_UNITS` and `SI_UNITS` — ordered supported unit sets.
-- `PACKAGE` — package identity and release metadata.
+- `isSize(value)` â€” validate a human-readable size string.
+- `describeUnit(unit)` â€” return the unit system, base, and exponent.
+- `IEC_UNITS` and `SI_UNITS` â€” ordered supported unit sets.
+- `PACKAGE` â€” package identity and release metadata.
 
 ### Types
 
@@ -96,4 +96,5 @@ The canonical package is published to JSR through GitHub Actions using OIDC trus
 
 ## License
 
-[MIT](LICENSE) © 2026 theworker02
+**Source-available proprietary** — evaluation under [LICENSE](./LICENSE); commercial / production use via [COMMERCIAL.md](./COMMERCIAL.md). See [LICENSE_TRANSITION_NOTICE.md](./LICENSE_TRANSITION_NOTICE.md) and [NOTICE](./NOTICE).
+
