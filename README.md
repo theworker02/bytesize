@@ -16,7 +16,7 @@ This project is **proprietary**. Production use, redistribution, and commercial 
 ![version 1.2.0](https://img.shields.io/badge/version-1.2.0-C9A227?labelColor=0B1F33)
 ![license MIT](https://img.shields.io/badge/license-Proprietary%20(source--available)-0B1F33)
 
-**Package:** [`@theworker02/bytesize`](https://jsr.io/@theworker02/bytesize) Â· **Docs:** [GitHub Pages](https://theworker02.github.io/bytesize/) Â· **Source:** [`theworker02/bytesize`](https://github.com/theworker02/bytesize)
+**Package:** [`@theworker02/bytesize`](https://jsr.io/@theworker02/bytesize) Ã‚Â· **Docs:** [GitHub Pages](https://theworker02.github.io/bytesize/) Ã‚Â· **Source:** [`theworker02/bytesize`](https://github.com/theworker02/bytesize)
 
 ## Highlights
 
@@ -55,17 +55,17 @@ console.log(isSize("42KB"), PACKAGE.version);
 
 ### Parsing and formatting
 
-- `parseSize(input)` â€” parse SI or IEC text into bytes.
-- `formatIec(bytes)` â€” format bytes using binary units.
-- `formatSi(bytes)` â€” format bytes using decimal units.
-- `convert(input, unit)` â€” convert a value to a target unit.
+- `parseSize(input)` Ã¢â‚¬â€ parse SI or IEC text into bytes.
+- `formatIec(bytes)` Ã¢â‚¬â€ format bytes using binary units.
+- `formatSi(bytes)` Ã¢â‚¬â€ format bytes using decimal units.
+- `convert(input, unit)` Ã¢â‚¬â€ convert a value to a target unit.
 
 ### Introspection
 
-- `isSize(value)` â€” validate a human-readable size string.
-- `describeUnit(unit)` â€” return the unit system, base, and exponent.
-- `IEC_UNITS` and `SI_UNITS` â€” ordered supported unit sets.
-- `PACKAGE` â€” package identity and release metadata.
+- `isSize(value)` Ã¢â‚¬â€ validate a human-readable size string.
+- `describeUnit(unit)` Ã¢â‚¬â€ return the unit system, base, and exponent.
+- `IEC_UNITS` and `SI_UNITS` Ã¢â‚¬â€ ordered supported unit sets.
+- `PACKAGE` Ã¢â‚¬â€ package identity and release metadata.
 
 ### Types
 
@@ -104,4 +104,8 @@ The canonical package is published to JSR through GitHub Actions using OIDC trus
 
 ## License
 
-**Source-available proprietary** — evaluation under [LICENSE](./LICENSE); commercial / production use via [COMMERCIAL.md](./COMMERCIAL.md). See [LICENSE_TRANSITION_NOTICE.md](./LICENSE_TRANSITION_NOTICE.md) and [NOTICE](./NOTICE).
+**Source-available proprietary** â€” evaluation under [LICENSE](./LICENSE); commercial / production use via [COMMERCIAL.md](./COMMERCIAL.md). See [LICENSE_TRANSITION_NOTICE.md](./LICENSE_TRANSITION_NOTICE.md) and [NOTICE](./NOTICE).
+
+## Status
+
+bytesize is actively packaged for commercial licensing and acquisition diligence. See [ACQUISITION.md](./ACQUISITION.md) and [docs/acquisition/](./docs/acquisition/).
