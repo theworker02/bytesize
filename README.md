@@ -14,9 +14,9 @@ This project is **proprietary**. Production use, redistribution, and commercial 
 
 [![JSR](https://jsr.io/badges/@theworker02/bytesize)](https://jsr.io/@theworker02/bytesize)
 ![version 1.2.0](https://img.shields.io/badge/version-1.2.0-C9A227?labelColor=0B1F33)
-![license MIT](https://img.shields.io/badge/license-Proprietary%20(source--available)-0B1F33)
+![license proprietary](https://img.shields.io/badge/license-proprietary-0B1F33)-0B1F33)
 
-**Package:** [`@theworker02/bytesize`](https://jsr.io/@theworker02/bytesize) Ã‚Â· **Docs:** [GitHub Pages](https://theworker02.github.io/bytesize/) Ã‚Â· **Source:** [`theworker02/bytesize`](https://github.com/theworker02/bytesize)
+**Package:** [`@theworker02/bytesize`](https://jsr.io/@theworker02/bytesize) Ãƒâ€šÃ‚Â· **Docs:** [GitHub Pages](https://theworker02.github.io/bytesize/) Ãƒâ€šÃ‚Â· **Source:** [`theworker02/bytesize`](https://github.com/theworker02/bytesize)
 
 ## Highlights
 
@@ -55,17 +55,17 @@ console.log(isSize("42KB"), PACKAGE.version);
 
 ### Parsing and formatting
 
-- `parseSize(input)` Ã¢â‚¬â€ parse SI or IEC text into bytes.
-- `formatIec(bytes)` Ã¢â‚¬â€ format bytes using binary units.
-- `formatSi(bytes)` Ã¢â‚¬â€ format bytes using decimal units.
-- `convert(input, unit)` Ã¢â‚¬â€ convert a value to a target unit.
+- `parseSize(input)` ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â parse SI or IEC text into bytes.
+- `formatIec(bytes)` ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â format bytes using binary units.
+- `formatSi(bytes)` ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â format bytes using decimal units.
+- `convert(input, unit)` ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â convert a value to a target unit.
 
 ### Introspection
 
-- `isSize(value)` Ã¢â‚¬â€ validate a human-readable size string.
-- `describeUnit(unit)` Ã¢â‚¬â€ return the unit system, base, and exponent.
-- `IEC_UNITS` and `SI_UNITS` Ã¢â‚¬â€ ordered supported unit sets.
-- `PACKAGE` Ã¢â‚¬â€ package identity and release metadata.
+- `isSize(value)` ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â validate a human-readable size string.
+- `describeUnit(unit)` ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â return the unit system, base, and exponent.
+- `IEC_UNITS` and `SI_UNITS` ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â ordered supported unit sets.
+- `PACKAGE` ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â package identity and release metadata.
 
 ### Types
 
@@ -104,7 +104,7 @@ The canonical package is published to JSR through GitHub Actions using OIDC trus
 
 ## License
 
-**Source-available proprietary** â€” evaluation under [LICENSE](./LICENSE); commercial / production use via [COMMERCIAL.md](./COMMERCIAL.md). See [LICENSE_TRANSITION_NOTICE.md](./LICENSE_TRANSITION_NOTICE.md) and [NOTICE](./NOTICE).
+**Source-available proprietary** Ã¢â‚¬â€ evaluation under [LICENSE](./LICENSE); commercial / production use via [COMMERCIAL.md](./COMMERCIAL.md). See [LICENSE_TRANSITION_NOTICE.md](./LICENSE_TRANSITION_NOTICE.md) and [NOTICE](./NOTICE).
 
 ## Status
 
